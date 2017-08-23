@@ -67,13 +67,12 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 // Code here
 function removeDuplicates (){
   for (var i = 0; i < workplaceAccidents.length; i++){
-    for(var j = workplaceAccidents.length; j > 1; j--){
-      if(workplaceAccidents[i] === workplaceAccidents[j]){
+    for(var j = workplaceAccidents.length-1; j > i; j--){
+      if(workplaceAccidents[j] === workplaceAccidents[i]){
         workplaceAccidents.splice(j,1);
       }
     }
   }
-  console.log(workplaceAccidents);
   return workplaceAccidents;
 }
 

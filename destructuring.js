@@ -2,7 +2,7 @@
 // DESTRUCTURING
 // ========================
 
-// Use object destructuring to save the property values from the object carDetails into new variables. 
+// Use object destructuring to save the property values from the object carDetails into new variables.
 
 var carDetails = {
   color: 'red',
@@ -11,7 +11,7 @@ var carDetails = {
   year: 1994
 }
 
-// CODE HERE
+const {color, make, model, year} = carDetails;
 
 
 // ========================
@@ -21,7 +21,7 @@ var carDetails = {
 
 function greeting( obj ) {
   // CODE HERE
-  
+
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
 }
 
@@ -37,7 +37,7 @@ function greeting( obj ) {
 // ========================
 
 
-// Write a function called ingredients that will take in an object. This object will have 3 properties named carb, fat, and protein. The property values will be strings. Use object destructuring to save the property values to new variables. Push these new variables to an array and return the array. 
+// Write a function called ingredients that will take in an object. This object will have 3 properties named carb, fat, and protein. The property values will be strings. Use object destructuring to save the property values to new variables. Push these new variables to an array and return the array.
 
   // CODE HERE
 
@@ -59,6 +59,6 @@ function greeting( obj ) {
 // ========================
 
 
-// Write a function called numberGroups that will take a destructured object as it's parameter. The object properties will be named a, b, and c and their values will be arrays of numbers. Find the longest array and return that array. 
+// Write a function called numberGroups that will take a destructured object as it's parameter. The object properties will be named a, b, and c and their values will be arrays of numbers. Find the longest array and return that array.
 
   // CODE HERE
