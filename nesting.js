@@ -73,6 +73,7 @@ function removeDuplicates (){
       }
     }
   }
+  console.log(workplaceAccidents);
   return workplaceAccidents;
 }
 

@@ -102,9 +102,9 @@ const purchases = [{"owner":"Barry","price":103},{"owner":"Bob","price":75},
 {"owner":"Bob","price":133},{"owner":"Barry","price":109},{"owner":"Bob","price":115}]
 
 let bobsTotal = purchases.reduce(
-  function (total, curIndex){
+  function (runningTotal, curElement, curIndex){
     if(curIndex.owner === 'Bob'){
-      return total + curIndex.price; 
+      return runningTotal + curIndex.price;
     }
   }
 )
