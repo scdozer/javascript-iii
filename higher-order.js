@@ -9,7 +9,11 @@
 
 const mixedNumbers = [6,3,1,7,5,2,6,8,9,4,2,7,9,3,1,8,4,3];
 
-let evenNumbers // = mixedNumbers.filter(/* Provide Your Callback Here */)
+let evenNumbers = mixedNumbers.filter(function(num){
+  if(num % 2 === 0){
+    return num;
+  }
+})
 
 // Below we have an array of prices.  We want to calculate their totals after
 // We want to use a map function on the prices to calculate a new array of
@@ -24,7 +28,11 @@ let evenNumbers // = mixedNumbers.filter(/* Provide Your Callback Here */)
 
 const prices = [15.00, 23.00, 78.00, 34.00, 12.00, 86.00, 12.00, 79.00, 32.00];
 
-let postTaxPrices // = prices.map(/* Provide Your Callback Here );
+let postTaxPrices  = prices.map(
+    function(num){
+      return (num * 1.07);
+    }
+ );
 
 
 
@@ -37,7 +45,11 @@ let postTaxPrices // = prices.map(/* Provide Your Callback Here );
 
 const populations = [8175133, 3792621, 2695598, 2100263]
 
-let totalPopulation //  = populations.reduce(/* Provide Your Callback Here */)
+let totalPopulation   = populations.reduce(
+  function (prev, curr){
+    return prev + curr;
+  }
+)
 
 // Now we're going to ramp up these a little bit.  Instead of just arrays of numbers
 // We are going to have array of objects that we want to use map filter and reduce with
@@ -55,7 +67,13 @@ const monstersInYourPocket = [{"monster":"Bulbabunny","CP":156},{"monster":"Bulb
 {"monster":"Sandmush","CP":262},{"monster":"Sandmush","CP":25},{"monster":"Charaflier","CP":215},
 {"monster":"Ponylopse","CP":125},{"monster":"Bulbabunny","CP":178}]
 
-let myStrongest // Your code here
+let myStrongest = monstersInYourPocket.filter(
+  function(num){
+    if (num.CP > 200){
+      return num;
+    }
+  }
+)
 
 // Below we have an array of orders.  but they all have different tax rates.
 // We want to make a new array of total prices.
@@ -65,7 +83,11 @@ const orders = [{"price":15,"tax":0.09},{"price":42,"tax":0.07},{"price":56,"tax
 {"price":72,"tax":0.14},{"price":51,"tax":0.09},{"price":89,"tax":0.15},
 {"price":48,"tax":0.13}]
 
-let ordersTotal // Your code here
+let ordersTotal = orders.map(
+  function (num){
+    return (num.price + (num.tax * num.price ));
+  }
+)
 
 // Below we have an array of purchases
 // We want to create a total for the purcahses, but only want to total Bob's
@@ -79,4 +101,10 @@ const purchases = [{"owner":"Barry","price":103},{"owner":"Bob","price":75},
 {"owner":"Barry","price":30},{"owner":"Barry","price":129},{"owner":"Barry","price":38},
 {"owner":"Bob","price":133},{"owner":"Barry","price":109},{"owner":"Bob","price":115}]
 
-let bobsTotal // Your code here
+let bobsTotal = purchases.reduce(
+  function (total, curIndex){
+    if(curIndex.owner === 'Bob'){
+      return total + curIndex.price; 
+    }
+  }
+)
