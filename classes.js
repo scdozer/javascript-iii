@@ -22,6 +22,24 @@ Each employee can:
 call your class Employee and receive all the data in the constructor in the order listed
 */
 
+class Employee {
+  constructor (first_name, last_name, email, age) {
+    this.first_name = first_name;
+    this.last_name = last_name;
+    this.email = email;
+    this.age = age;
+  }
+
+  makeWidget () {
+    return this.first_name + ' ' + this.last_name + ' ' + 'Widget'
+    // ES6 template literal
+    // return `${this.first_name} ${this.last_name} Widget`
+  }
+}
+
+//example of calling it.
+// var emp1 = new Employee ('scott', 'cardoza', 'scott@scott.com', '30');
+// emp1.makeWidget();
 
 
 /*
@@ -41,6 +59,31 @@ call your class Manager
 
 */
 
+class Manager {
+  constructor (first_name, last_name, email, age) {
+    this.first_name = first_name;
+    this.last_name = last_name;
+    this.email = email;
+    this.age = age;
+    this.reports = [];
+  }
+
+  makeWidget () {
+    return this.first_name + ' ' + this.last_name + ' ' + 'Widget'
+    // ES6 template literal
+    // return `${this.first_name} ${this.last_name} Widget`
+  }
+
+  hire(employee){
+    // add an employee to reports
+    this.reports.push(employee);
+  }
+
+  fire(index){
+    //remove starting at this index, remove one item
+    this.reports.splice(index, 1);
+  }
+}
 
 
 
@@ -64,6 +107,61 @@ Everytime they fire an employee they get a bonus of $100 add to their .
 
 call you class ProgressiveManager
 */
+
+
+class ProgressiveManager {
+  constructor (first_name, last_name, email, age) {
+    this.first_name = first_name;
+    this.last_name = last_name;
+    this.email = email;
+    this.age = age;
+    this.reports = [];
+    this.title = 'Not a manager';
+    this.bonus = 0;
+  }
+
+  makeWidget () {
+    return this.first_name + ' ' + this.last_name + ' ' + 'Widget'
+    // ES6 template literal
+    // return `${this.first_name} ${this.last_name} Widget`
+  }
+
+  hire(employee){
+    // add an employee to reports
+    this.reports.push(employee);
+    this.changeTitle(this.reports.length)
+    // check length
+  }
+
+  fire(index){
+    //remove starting at this index, remove one item
+    this.reports.splice(index, 1);
+    this.bonus += 100;
+    this.changeTitle(this.reports.length)
+  }
+
+
+  changeTitle (reportsLength){
+    if (reportsLength === 0){
+      this.title = 'Not a manager'
+    }
+    else if (reportsLength <= 3){
+      this.title = 'Barely Manager'
+    }
+    else if(reportsLength <= 10){
+      this.title = 'Mostly Manager'
+    }
+    else if(reportsLength <= 50){
+      this.title = 'Manager'
+    }
+    else if(reportsLength <= 100){
+      this.title = 'Manager Plus'
+    }
+    else {
+      this.title = 'Bestest Manager'
+    }
+  }
+}
 
 
 
